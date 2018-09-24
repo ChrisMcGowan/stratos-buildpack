@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -euox pipefail
 
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -100,3 +100,5 @@ echo "-----> Stratos build complete [`date +%H:%M:%S`]"
 echo "-----> Build time:"
 END_TIME=`date +%s`
 show_time $(($END_TIME - $START_TIME))
+echo "time to halt the party"
+sleep 10000000
