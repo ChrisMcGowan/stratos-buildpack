@@ -20,7 +20,7 @@ if [ ! -f ${DOWNLOAD_FILE} ]; then
 
   URL=https://github.com/golang/dep/releases/download/v${DEP_VERSION}/dep-${DEP_PLATFORM}
   echo "-----> Download dep ${DEP_VERSION}"
-  curl -s -L --retry 15 --retry-delay 2 $URL -o ${DOWNLOAD_FILE}
+  curl -v -s -L --retry 15 --retry-delay 2 $URL -o ${DOWNLOAD_FILE}
 else
   echo "-----> dep install package available in cache"
 fi
