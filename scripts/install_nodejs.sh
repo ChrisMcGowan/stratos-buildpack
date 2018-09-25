@@ -2,6 +2,12 @@
 set -euox pipefail
 
 NODE_VERSION="8.9.4"
+GIT_CURL_VERBOSE=1
+GIT_SSL_NO_VERIFY=true
+GIT_TRACE_PERFORMANCE=true
+echo "My proxies"
+echo "http_proxy: "$http_proxy
+echo "https_proxy: "$https_proxy
 
 DOWNLOAD_FOLDER=${CACHE_DIR}/Downloads
 mkdir -p ${DOWNLOAD_FOLDER}

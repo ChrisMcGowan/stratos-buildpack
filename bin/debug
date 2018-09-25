@@ -3,7 +3,13 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 BUILD_PACK_DIR=$(dirname $(dirname $0))
+GIT_CURL_VERBOSE=1
+GIT_SSL_NO_VERIFY=true
+GIT_TRACE_PERFORMANCE=true
 
+echo "My proxies"
+echo "http_proxy: "$http_proxy
+echo "https_proxy: "$https_proxy
 echo "All arguments [$@]"
 
 if [ ! -d "$BUILD_DIR" ]; then

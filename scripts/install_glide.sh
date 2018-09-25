@@ -5,6 +5,12 @@ set -euox pipefail
 
 GLIDE_VERSION="0.13.0"
 GLIDE_PLATFORM="linux-amd64"
+GIT_CURL_VERBOSE=1
+GIT_SSL_NO_VERIFY=true
+GIT_TRACE_PERFORMANCE=true
+echo "My proxies"
+echo "http_proxy: "$http_proxy
+echo "https_proxy: "$https_proxy
 
 export GlideInstallDir="/tmp/glide/$GLIDE_VERSION"
 mkdir -p $GlideInstallDir

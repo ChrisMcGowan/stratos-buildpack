@@ -3,7 +3,13 @@ set -euox pipefail
 
 BUILD_DIR=$1
 export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
+GIT_CURL_VERBOSE=1
+GIT_SSL_NO_VERIFY=true
+GIT_TRACE_PERFORMANCE=true
 
+echo "My proxies"
+echo "http_proxy: "$http_proxy
+echo "https_proxy: "$https_proxy
 # Remove the node_modules and bower_components folders - only needed for build
 
 if [[ -L "$BUILD_DIR/node_modules" && -d "$BUILD_DIR/node_modules" ]]; then
