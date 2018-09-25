@@ -5,9 +5,9 @@ set -euox pipefail
 
 DEP_VERSION="0.5.0"
 DEP_PLATFORM="linux-amd64"
-GIT_CURL_VERBOSE=1
-GIT_SSL_NO_VERIFY=true
-GIT_TRACE_PERFORMANCE=true
+export GIT_CURL_VERBOSE=1
+export GIT_SSL_NO_VERIFY=true
+export GIT_TRACE_PERFORMANCE=true
 echo "My proxies"
 echo "http_proxy: "$http_proxy
 echo "https_proxy: "$https_proxy
