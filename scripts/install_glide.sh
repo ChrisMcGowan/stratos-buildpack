@@ -13,7 +13,7 @@ if [ ! -f $GlideInstallDir/$GLIDE_PLATFORM/glide ]; then
   URL=https://github.com/Masterminds/glide/releases/download/v${GLIDE_VERSION}/glide-v${GLIDE_VERSION}-linux-amd64.tar.gz
 
   echo "-----> Download glide ${GLIDE_VERSION}"
-  curl -s -L --retry 15 --retry-delay 2 $URL -o /tmp/glide.tar.gz
+  curl  -v -s -L --retry 15 --retry-delay 2 $URL -o /tmp/glide.tar.gz
 
   tar xzf /tmp/glide.tar.gz -C $GlideInstallDir
   rm /tmp/glide.tar.gz
