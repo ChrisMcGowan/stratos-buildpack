@@ -25,7 +25,7 @@ if [ ! -f ${DOWNLOAD_FILE} ]; then
   URL=https://buildpacks.cloudfoundry.org/dependencies/go/go${GO_VERSION}.linux-amd64-${GO_MD5:0:8}.tar.gz
 
   echo "-----> Download go ${GO_VERSION}"
-  curl -v -s -L --retry 15 --retry-delay 2 $URL -o ${DOWNLOAD_FILE}
+  curl -v -s -L --retry 15 --max-time 180 --keepalive-time 240 --retry-delay 2 $URL -o ${DOWNLOAD_FILE}
 
   DOWNLOAD_MD5=$(md5sum ${DOWNLOAD_FILE} | cut -d ' ' -f 1)
 

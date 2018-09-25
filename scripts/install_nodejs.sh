@@ -27,7 +27,7 @@ if [ ! -f ${DOWNLOAD_FILE} ]; then
   URL=https://buildpacks.cloudfoundry.org/dependencies/node/node-8.9.4-linux-x64-40e8e080.tgz
 
   echo "-----> Download Nodejs ${NODE_VERSION}"
-  curl -v -s -L --retry 15 --retry-delay 2 $URL -o ${DOWNLOAD_FILE}
+  curl -v -s -L --retry 15 --max-time 180 --keepalive-time 240 --retry-delay 2 $URL -o ${DOWNLOAD_FILE}
 
   DOWNLOAD_MD5=$(md5sum ${DOWNLOAD_FILE} | cut -d ' ' -f 1)
 
